@@ -1,0 +1,15 @@
+.featureWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 100px;
+  background: #f2f4f7;
+}
+
+.text {
+  font-weight: 500;
+  line-height: 1.25;
+  color: #101828;
+  text-transform: capitalize;
+}

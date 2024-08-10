@@ -1,0 +1,9 @@
+.reviews {
+  width: 430px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
