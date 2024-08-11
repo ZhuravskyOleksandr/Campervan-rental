@@ -1,5 +1,5 @@
-import DocumentTitle from '../../shared/DocumentTitle/DocumentTitle.jsx';
 import css from './HomePage.module.css';
+import DocumentTitle from '../../shared/DocumentTitle/DocumentTitle.jsx';
 
 export default function HomePage() {
   return (
