@@ -25,12 +25,13 @@ easy to find and book campers.
 
 We welcome contributions! Please follow the standard GitHub flow:
 
-1. Fork the repository.
-2. Create a new branch (**git checkout -b - feature-branch**).
-3. Make your changes.
-4. Commit your changes (**git commit -m 'Add some - feature'**).
-5. Push to the branch (**git push origin - feature-branch**).
-6. Create a Pull Request.
+1. Clone the repository.
+2. Install dependencies (**npm install**)
+3. Create a new branch (**git checkout -b - feature-branch**).
+4. Make your changes.
+5. Commit your changes (**git commit -m 'Add some - feature'**).
+6. Push to the branch (**git push origin - feature-branch**).
+7. Create a Pull Request.
 
 ## License
 
