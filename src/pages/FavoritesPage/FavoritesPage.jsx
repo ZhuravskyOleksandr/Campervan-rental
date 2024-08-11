@@ -1,4 +1,5 @@
 import css from './FavoritesPage.module.css';
+import van from '../../../public/images/van-8150456_640-min.png';
 import { useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/adverts/slice.js';
 import CampersItem from '../../components/CampersItem/CampersItem.jsx';
@@ -21,11 +22,7 @@ export default function FavoritesPage() {
         </ul>
       ) : (
         <div className={css.emptyWrapper}>
-          <img
-            className={css.img}
-            src="/public/images/van-8150456_640-min.png"
-            alt="Campervan in the mountains"
-          />
+          <img className={css.img} src={van} alt="Campervan in the mountains" />
           <h2 className={css.title}>Your Favorites List is Currently Empty</h2>
           <p className={css.text}>
             Check out our wide range of campers to find the perfect one for your
