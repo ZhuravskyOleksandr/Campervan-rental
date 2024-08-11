@@ -1,0 +1,29 @@
+.home {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+  width: 100vw;
+  height: 97vh;
+  background-color: #af9974;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(94, 94, 94, 0.7),
+      rgba(94, 94, 94, 0.7)
+    ),
+    url(/src/assets/images/motorhome-1827832_1920-min.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 80%;
+}
+
+.text {
+  color: #f7f7f7;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 800px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}

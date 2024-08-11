@@ -11,9 +11,8 @@
 
 .camperImage {
   border-radius: 10px;
-  width: 290px;
-  height: 310px;
   width: 100%;
+  height: 310px;
 }
 
 .nameWrapper {
@@ -91,6 +90,5 @@
 
 .showMoreBtn {
   width: 166px;
-  height: 56px;
   margin-top: auto;
 }

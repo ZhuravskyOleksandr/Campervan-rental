@@ -34,7 +34,7 @@ export default function CampersItem({ camper }) {
           <h2 className={css.camperName}>{camper.name}</h2>
           <div className={css.priceWrapper}>
             <p className={css.camperPrice}>€{camper.price.toFixed(2)}</p>
-            <FavoriteButton />
+            <FavoriteButton camper={camper} />
           </div>
         </div>
         <div className={css.ratingWrapper}>

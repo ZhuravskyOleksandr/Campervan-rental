@@ -20,7 +20,7 @@ export default function ModalMarkup({ camper, onClose }) {
       <div className={css.ratingWrapper}>
         <p className={css.camperRating}>
           <svg className={css.ratingStar} width="20" height="20">
-            <use xlinkHref={`${icons}#icon-rating-star`}></use>
+            <use xlinkHref={`${icons}#icon-rating-star-filled`}></use>
           </svg>
           {camper.rating} ({camper.reviews.length} Reviews)
         </p>

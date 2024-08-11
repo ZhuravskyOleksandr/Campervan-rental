@@ -1,6 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { advertsInitialState } from '../../constants.js';
-import { fetchAdverts } from './operations.js';
+import { fetchAdverts, fetchMoreAdverts } from './operations.js';
+
+const handlePending = state => {
+  state.isLoading = true;
+  state.error = null;
+};
+
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 const advertsSlice = createSlice({
   name: 'adverts',
@@ -8,13 +18,14 @@ const advertsSlice = createSlice({
   selectors: {
     selectCampers: state => state.campers,
     selectFavorites: state => state.favorites,
+    selectPage: state => state.page,
     selectIsLoading: state => state.isLoading,
     selectError: state => state.error,
   },
   reducers: {
     toggleFavorites: (state, action) => {
       const isFavorite = state.favorites.some(
-        favorite => favorite.id === action.payload._id
+        favorite => favorite._id === action.payload._id
       );
 
       if (!isFavorite) {
@@ -25,25 +36,37 @@ const advertsSlice = createSlice({
         );
       }
     },
+    resetPage: state => {
+      state.page = 2;
+    },
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchAdverts.pending, state => {
-        state.isLoading = true;
-        state.error = null;
-      })
+      .addCase(fetchAdverts.pending, handlePending)
       .addCase(fetchAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.campers = action.payload;
       })
-      .addCase(fetchAdverts.rejected, (state, action) => {
+      .addCase(fetchAdverts.rejected, handleRejected)
+
+      .addCase(fetchMoreAdverts.pending, handlePending)
+      .addCase(fetchMoreAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
-      });
+        state.campers = [...state.campers, ...action.payload];
+        state.page += 1;
+      })
+      .addCase(fetchMoreAdverts.rejected, handleRejected);
   },
 });
 
-export const { selectCampers, selectFavorites, selectIsLoading, selectError } =
-  advertsSlice.selectors;
-export const { toggleFavorites } = advertsSlice.actions;
+export const selectIsFavorite = camper => state =>
+  state.adverts.favorites.some(favorite => favorite._id === camper._id);
+export const {
+  selectCampers,
+  selectFavorites,
+  selectIsLoading,
+  selectError,
+  selectPage,
+} = advertsSlice.selectors;
+export const { toggleFavorites, resetPage } = advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;
