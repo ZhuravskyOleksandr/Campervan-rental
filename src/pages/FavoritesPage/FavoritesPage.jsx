@@ -23,7 +23,7 @@ export default function FavoritesPage() {
         <div className={css.emptyWrapper}>
           <img
             className={css.img}
-            src="../../assets/images/van-8150456_640-min.png"
+            src="/public/images/van-8150456_640-min.png"
             alt="Campervan in the mountains"
           />
           <h2 className={css.title}>Your Favorites List is Currently Empty</h2>

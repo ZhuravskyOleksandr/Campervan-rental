@@ -1,10 +1,10 @@
 import Layout from '../../shared/Layout/Layout.jsx';
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import HomePage from '../../pages/HomePage/HomePage.jsx';
 import { Toaster } from 'react-hot-toast';
 import HourglassLoader from '../../shared/HourglassLoader/HourglassLoader.jsx';
 
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
   import('../../pages/CatalogPage/CatalogPage.jsx')
 );
